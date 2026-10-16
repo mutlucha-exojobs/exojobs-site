@@ -77,12 +77,12 @@
   </ul>
 
   <h2 id="tr-3">3. Topladığımız veriler, amaçları ve hukuki dayanakları</h2>
-  <p>Hukuki dayanaklar GDPR madde 6/1'deki bentlerdir: <strong>(a)</strong> açık rıza, <strong>(b)</strong> sözleşmenin, yani bu hizmetin sağlanması, <strong>(c)</strong> hukuki yükümlülük, <strong>(f)</strong> meşru menfaat.</p>
+  <p>Bir veriyi işleyebilmek için GDPR madde 6/1'de sayılan hukuki dayanaklardan birine ihtiyacımız var. Tabloda harflerle gösterdik: <strong>(a)</strong> rıza: sen izin verdin ve istediğin an geri alabilirsin; <strong>(b)</strong> sözleşme: veri, kullandığın hizmeti sunmak için gerekli; <strong>(c)</strong> yasal yükümlülük: bir yasa bunu yapmamızı istiyor; <strong>(f)</strong> meşru menfaat: güvenlik gibi haklı bir amacımız var ve bu amaç senin haklarından ağır basmıyor.</p>
   <div class="table-scroll">
   <table>
     <thead><tr><th>Veri</th><th>Ne için</th><th>Dayanak</th></tr></thead>
     <tbody>
-      <tr><td><strong>Hesap:</strong> ad soyad, e-posta, şifre (sadece bcrypt ile özetlenmiş hâli saklanır, düz metin olarak asla), hesap türü (işçi/işveren), dil, kayıt ve son giriş tarihi</td><td>Hesap açmak, giriş yapmak, seni tanımak, e-posta göndermek, uzun süre kullanılmayan hesapları silmek</td><td>(b)</td></tr>
+      <tr><td><strong>Hesap:</strong> ad soyad, e-posta, şifre (asla düz metin olarak değil, şifreye geri çevrilemeyen bir biçimde, bcrypt ile saklanır), hesap türü (işçi/işveren), dil, kayıt ve son giriş tarihi</td><td>Hesap açmak, giriş yapmak, e-posta göndermek, uzun süre kullanılmayan hesapları silmek</td><td>(b)</td></tr>
       <tr><td><strong>Doğrulama kodları:</strong> kayıt ve şifre sıfırlama için e-postana gönderilen 6 haneli kodlar</td><td>E-posta adresinin senin olduğunu doğrulamak, şifreni sıfırlamak</td><td>(b), (f) güvenlik</td></tr>
       <tr><td><strong>İşçi profili:</strong> yaş, uyruk, kimlik belgesi türü, çalışma izni ve diğer belge bilgileri, meslek ve beceriler, kaynak yöntemleri ve pozisyonları, sertifikalar (A1, VCA/SCC, EHIC vb.), iş makineleri, ehliyet sınıfları, deneyim ve iş geçmişi, diller, referans, müsaitlik, tercih edilen ülkeler, seyahat isteği</td><td>Profilini başvurduğun işverenlere göstermek; açarsan ilanına uyan işverenlerin seni bulmasını sağlamak; özgeçmiş (CV) oluşturmak</td><td>(b)</td></tr>
       <tr><td><strong>Profil fotoğrafı</strong> (isteğe bağlı) ve <strong>CV dosyası</strong> (PDF, isteğe bağlı)</td><td>Profilinde işverenlere göstermek</td><td>(a) fotoğraf için onayın; (b) CV</td></tr>
@@ -127,7 +127,7 @@
     </tbody>
   </table>
   </div>
-  <p><strong>AB dışına aktarım:</strong> Bu sağlayıcıların bazıları ABD'de bulunur ya da verilere AB dışından erişebilir. Bu aktarımlarda, sağlayıcı sertifikalıysa AB-ABD Veri Gizliliği Çerçevesi'ne (GDPR md. 45), değilse Avrupa Komisyonu'nun standart sözleşme maddelerine (GDPR md. 46) dayanırız.</p>
+  <p><strong>AB dışına aktarım:</strong> Bu sağlayıcıların bazıları ABD'de bulunur ya da verilere AB dışından erişebilir. Bu aktarımlarda, sağlayıcı sertifikalıysa AB-ABD Veri Gizliliği Çerçevesi'ne (GDPR md. 45), değilse Avrupa Komisyonu'nun onayladığı standart veri koruma sözleşmelerine (GDPR md. 46) dayanırız. Bu iki yol da verilerinin AB dışında da AB'dekine denk biçimde korunmasını sağlamak içindir.</p>
 
   <h2 id="tr-6">6. Saklama süreleri</h2>
   <div class="table-scroll">
@@ -153,19 +153,19 @@
     <li><strong>Erişim</strong> (md. 15): hakkında hangi verileri tuttuğumuzu öğrenme ve bir kopyasını alma.</li>
     <li><strong>Düzeltme</strong> (md. 16): yanlış verileri düzeltme. Çoğunu uygulamada profilini düzenleyerek kendin yapabilirsin.</li>
     <li><strong>Silme</strong> (md. 17): hesabını ve verilerini silme. <a href="delete-account.html">Nasıl silinir?</a></li>
-    <li><strong>İşlemeyi kısıtlama</strong> (md. 18).</li>
+    <li><strong>İşlemeyi kısıtlama</strong> (md. 18): örneğin bir itirazın incelenirken verilerinin silinmeden saklanmasını ama kullanılmamasını isteme.</li>
     <li><strong>Veri taşınabilirliği</strong> (md. 20): sağladığın verileri yaygın, makinece okunabilir bir biçimde alma.</li>
     <li><strong>İtiraz</strong> (md. 21): meşru menfaate dayanan işlemlere itiraz etme.</li>
-    <li><strong>Rızayı geri alma</strong> (md. 7/3): fotoğrafını kaldırabilir, "Profilim işverenlere görünsün" ayarını istediğin an kapatabilirsin. Geri almak, önceki işlemleri hukuka aykırı yapmaz.</li>
+    <li><strong>Rızayı geri alma</strong> (md. 7/3): fotoğrafını kaldırabilir, "Profilim işverenlere görünsün" ayarını istediğin an kapatabilirsin. Geri aldığında, o ana kadar yapılmış işlemler geçerli kalır.</li>
   </ul>
   <p>Haklarını kullanmak için kayıtlı e-posta adresinden <a href="mailto:privacy@exojobs.eu">privacy@exojobs.eu</a> adresine yaz. Bir ay içinde yanıt veririz; karmaşık taleplerde bu süre, nedenini bildirerek iki ay daha uzayabilir. Kimliğini doğrulamak için ek bilgi isteyebiliriz.</p>
-  <p><strong>Şikâyet hakkı:</strong> Verilerinin hukuka aykırı işlendiğini düşünüyorsan Yunanistan Kişisel Verileri Koruma Kurumu'na (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, HDPA) şikâyette bulunabilirsin: Kifisias 1-3, 115 23 Atina, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Yaşadığın ya da çalıştığın AB ülkesinin veri koruma kurumuna da başvurabilirsin. Önce bize yazarsan sorunu birlikte çözmeye çalışırız.</p>
+  <p><strong>Şikâyet hakkı:</strong> Verilerinin hukuka aykırı işlendiğini düşünüyorsan Yunanistan Kişisel Verileri Koruma Kurumu'na (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, HDPA) şikâyette bulunabilirsin: Kifisias 1-3, 115 23 Atina, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Yaşadığın, çalıştığın ya da sorunun yaşandığı ülkenin veri koruma kurumuna da başvurabilirsin. Önce bize yazarsan sorunu birlikte çözmeye çalışırız.</p>
 
   <h2 id="tr-8">8. Güvenlik</h2>
-  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler sadece bcrypt ile özetlenmiş olarak saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde HDPA'ya, yüksek risk varsa sana da haber veririz.</p>
+  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler, şifreye geri çevrilemeyen bir biçimde (bcrypt) saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde Yunanistan Kişisel Verileri Koruma Kurumu'na (HDPA), yüksek risk varsa sana da haber veririz.</p>
 
   <h2 id="tr-9">9. Yaş sınırı</h2>
-  <p>ExoJobs sadece 18 yaşından büyükler içindir. Kayıt olurken 18 yaşından büyük olduğunu onaylarsın. 18 yaşından küçük birine ait bir hesap olduğunu öğrenirsek hesabı ve verilerini sileriz.</p>
+  <p>ExoJobs sadece en az 18 yaşında olanlar içindir. Kayıt olurken en az 18 yaşında olduğunu onaylarsın. 18 yaşından küçük birine ait bir hesap olduğunu öğrenirsek hesabı ve verilerini sileriz.</p>
 
   <h2 id="tr-10">10. Bu web sitesi</h2>
   <p>Bu site çerez kullanmaz, analitik ya da takip aracı içermez ve dış kaynak (yazı tipi, betik, görsel) yüklemez. Dil seçimin sadece sayfa adresinde (<code>?lang=</code>) tutulur. Site GitHub Pages'te barındırılır; GitHub, sitenin güvenliği ve çalışması için ziyaretçilerin IP adreslerini teknik kayıtlarında işler.</p>
@@ -213,12 +213,12 @@
   </ul>
 
   <h2 id="el-3">3. Ποια δεδομένα συλλέγουμε, γιατί και με ποια νομική βάση</h2>
-  <p>Οι νομικές βάσεις είναι οι περιπτώσεις του άρθρου 6 παρ. 1 ΓΚΠΔ: <strong>(α)</strong> συγκατάθεση, <strong>(β)</strong> εκτέλεση σύμβασης, δηλαδή παροχή της υπηρεσίας, <strong>(γ)</strong> νομική υποχρέωση, <strong>(στ)</strong> έννομο συμφέρον.</p>
+  <p>Για να επεξεργαστούμε ένα δεδομένο χρειαζόμαστε μία από τις νομικές βάσεις του άρθρου 6 παρ. 1 ΓΚΠΔ. Στον πίνακα τις δείχνουμε με γράμματα: <strong>(α)</strong> συγκατάθεση: μας δώσατε άδεια και μπορείτε να την ανακαλέσετε όποτε θέλετε· <strong>(β)</strong> σύμβαση: το δεδομένο χρειάζεται για να σας παρέχουμε την υπηρεσία που χρησιμοποιείτε· <strong>(γ)</strong> νομική υποχρέωση: ένας νόμος μας υποχρεώνει· <strong>(στ)</strong> έννομο συμφέρον: έχουμε έναν δικαιολογημένο σκοπό, όπως η ασφάλεια, που δεν υπερισχύει των δικαιωμάτων σας.</p>
   <div class="table-scroll">
   <table>
     <thead><tr><th>Δεδομένα</th><th>Για ποιο σκοπό</th><th>Βάση</th></tr></thead>
     <tbody>
-      <tr><td><strong>Λογαριασμός:</strong> ονοματεπώνυμο, email, κωδικός (αποθηκεύεται μόνο κρυπτογραφικά κατακερματισμένος με bcrypt, ποτέ ως απλό κείμενο), τύπος λογαριασμού (εργαζόμενος/εργοδότης), γλώσσα, ημερομηνία εγγραφής και τελευταίας σύνδεσης</td><td>Δημιουργία λογαριασμού, σύνδεση, αποστολή email, διαγραφή λογαριασμών που δεν χρησιμοποιούνται για μεγάλο διάστημα</td><td>(β)</td></tr>
+      <tr><td><strong>Λογαριασμός:</strong> ονοματεπώνυμο, email, κωδικός (ποτέ ως απλό κείμενο· αποθηκεύεται με bcrypt σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό), τύπος λογαριασμού (εργαζόμενος/εργοδότης), γλώσσα, ημερομηνία εγγραφής και τελευταίας σύνδεσης</td><td>Δημιουργία λογαριασμού, σύνδεση, αποστολή email, διαγραφή λογαριασμών που δεν χρησιμοποιούνται για μεγάλο διάστημα</td><td>(β)</td></tr>
       <tr><td><strong>Κωδικοί επαλήθευσης:</strong> 6ψήφιοι κωδικοί που στέλνονται στο email σας κατά την εγγραφή και την επαναφορά κωδικού</td><td>Επιβεβαίωση ότι το email είναι δικό σας, επαναφορά κωδικού</td><td>(β), (στ) ασφάλεια</td></tr>
       <tr><td><strong>Προφίλ εργαζομένου:</strong> ηλικία, υπηκοότητα, είδος εγγράφου ταυτότητας, άδεια εργασίας και άλλα έγγραφα, ειδικότητα και δεξιότητες, μέθοδοι και θέσεις συγκόλλησης, πιστοποιητικά (A1, VCA/SCC, EHIC κ.ά.), μηχανήματα, κατηγορίες διπλώματος οδήγησης, εμπειρία και ιστορικό εργασίας, γλώσσες, συστάσεις, διαθεσιμότητα, προτιμώμενες χώρες, διάθεση για μετακίνηση</td><td>Εμφάνιση του προφίλ στους εργοδότες στους οποίους κάνετε αίτηση· αν το ενεργοποιήσετε, εμφάνιση σε εργοδότες με αγγελίες που σας ταιριάζουν· δημιουργία βιογραφικού</td><td>(β)</td></tr>
       <tr><td><strong>Φωτογραφία προφίλ</strong> (προαιρετική) και <strong>αρχείο βιογραφικού</strong> (PDF, προαιρετικό)</td><td>Εμφάνιση στο προφίλ σας προς τους εργοδότες</td><td>(α) για τη φωτογραφία· (β) για το βιογραφικό</td></tr>
@@ -263,7 +263,7 @@
     </tbody>
   </table>
   </div>
-  <p><strong>Διαβιβάσεις εκτός ΕΕ:</strong> Ορισμένοι από αυτούς τους παρόχους βρίσκονται στις ΗΠΑ ή μπορεί να έχουν πρόσβαση στα δεδομένα από χώρες εκτός ΕΕ. Για τις διαβιβάσεις αυτές βασιζόμαστε στο Πλαίσιο Προστασίας Δεδομένων ΕΕ-ΗΠΑ όταν ο πάροχος είναι πιστοποιημένος (άρθρο 45 ΓΚΠΔ) και, διαφορετικά, στις τυποποιημένες συμβατικές ρήτρες της Ευρωπαϊκής Επιτροπής (άρθρο 46 ΓΚΠΔ).</p>
+  <p><strong>Διαβιβάσεις εκτός ΕΕ:</strong> Ορισμένοι από αυτούς τους παρόχους βρίσκονται στις ΗΠΑ ή μπορεί να έχουν πρόσβαση στα δεδομένα από χώρες εκτός ΕΕ. Για τις διαβιβάσεις αυτές βασιζόμαστε στο Πλαίσιο Προστασίας Δεδομένων ΕΕ-ΗΠΑ όταν ο πάροχος είναι πιστοποιημένος (άρθρο 45 ΓΚΠΔ) και, διαφορετικά, στις τυποποιημένες συμβατικές ρήτρες που έχει εγκρίνει η Ευρωπαϊκή Επιτροπή (άρθρο 46 ΓΚΠΔ). Και οι δύο λύσεις υπάρχουν ώστε τα δεδομένα σας να προστατεύονται και εκτός ΕΕ όπως μέσα στην ΕΕ.</p>
 
   <h2 id="el-6">6. Χρόνος διατήρησης</h2>
   <div class="table-scroll">
@@ -289,19 +289,19 @@
     <li><strong>Πρόσβαση</strong> (άρθρο 15): να μάθετε ποια δεδομένα σας τηρούμε και να λάβετε αντίγραφο.</li>
     <li><strong>Διόρθωση</strong> (άρθρο 16): να διορθώσετε ανακριβή δεδομένα. Τα περισσότερα τα διορθώνετε μόνοι σας επεξεργάζοντας το προφίλ στην εφαρμογή.</li>
     <li><strong>Διαγραφή</strong> (άρθρο 17): να διαγράψετε τον λογαριασμό και τα δεδομένα σας. <a href="delete-account.html">Πώς γίνεται;</a></li>
-    <li><strong>Περιορισμός της επεξεργασίας</strong> (άρθρο 18).</li>
+    <li><strong>Περιορισμός της επεξεργασίας</strong> (άρθρο 18): να ζητήσετε, για παράδειγμα όσο εξετάζεται μια ένστασή σας, τα δεδομένα σας να φυλάσσονται χωρίς να διαγραφούν αλλά και χωρίς να χρησιμοποιούνται.</li>
     <li><strong>Φορητότητα</strong> (άρθρο 20): να λάβετε τα δεδομένα που μας δώσατε σε κοινό, μηχαναγνώσιμο μορφότυπο.</li>
     <li><strong>Εναντίωση</strong> (άρθρο 21): να αντιταχθείτε σε επεξεργασία που βασίζεται σε έννομο συμφέρον.</li>
-    <li><strong>Ανάκληση συγκατάθεσης</strong> (άρθρο 7 παρ. 3): μπορείτε να αφαιρέσετε τη φωτογραφία σας ή να απενεργοποιήσετε το «Ορατό προφίλ για εργοδότες» όποτε θέλετε. Η ανάκληση δεν επηρεάζει τη νομιμότητα της προηγούμενης επεξεργασίας.</li>
+    <li><strong>Ανάκληση συγκατάθεσης</strong> (άρθρο 7 παρ. 3): μπορείτε να αφαιρέσετε τη φωτογραφία σας ή να απενεργοποιήσετε το «Ορατό προφίλ για εργοδότες» όποτε θέλετε. Αν την ανακαλέσετε, η επεξεργασία που έγινε μέχρι τότε παραμένει νόμιμη.</li>
   </ul>
   <p>Για να ασκήσετε τα δικαιώματά σας, γράψτε από το email του λογαριασμού σας στο <a href="mailto:privacy@exojobs.eu">privacy@exojobs.eu</a>. Απαντάμε μέσα σε έναν μήνα· σε σύνθετα αιτήματα η προθεσμία μπορεί να παραταθεί κατά δύο ακόμη μήνες, με ενημέρωσή σας για τον λόγο. Μπορεί να ζητήσουμε πρόσθετα στοιχεία για να επιβεβαιώσουμε την ταυτότητά σας.</p>
-  <p><strong>Δικαίωμα καταγγελίας:</strong> Αν θεωρείτε ότι τα δεδομένα σας υποβάλλονται σε επεξεργασία κατά παράβαση του νόμου, μπορείτε να υποβάλετε καταγγελία στην Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα: Κηφισίας 1-3, 115 23 Αθήνα, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Μπορείτε επίσης να απευθυνθείτε στην αρχή προστασίας δεδομένων της χώρας της ΕΕ όπου ζείτε ή εργάζεστε. Αν μας γράψετε πρώτα, θα προσπαθήσουμε να λύσουμε το θέμα μαζί.</p>
+  <p><strong>Δικαίωμα καταγγελίας:</strong> Αν θεωρείτε ότι τα δεδομένα σας υποβάλλονται σε επεξεργασία κατά παράβαση του νόμου, μπορείτε να υποβάλετε καταγγελία στην Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα: Κηφισίας 1-3, 115 23 Αθήνα, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Μπορείτε επίσης να απευθυνθείτε στην αρχή προστασίας δεδομένων της χώρας όπου ζείτε, εργάζεστε ή όπου συνέβη το πρόβλημα. Αν μας γράψετε πρώτα, θα προσπαθήσουμε να λύσουμε το θέμα μαζί.</p>
 
   <h2 id="el-8">8. Ασφάλεια</h2>
-  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται μόνο κατακερματισμένοι με bcrypt. Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
+  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό (bcrypt). Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
 
   <h2 id="el-9">9. Όριο ηλικίας</h2>
-  <p>Το ExoJobs απευθύνεται μόνο σε άτομα άνω των 18 ετών. Κατά την εγγραφή επιβεβαιώνετε ότι είστε άνω των 18. Αν διαπιστώσουμε ότι ένας λογαριασμός ανήκει σε ανήλικο, διαγράφουμε τον λογαριασμό και τα δεδομένα του.</p>
+  <p>Το ExoJobs απευθύνεται μόνο σε άτομα τουλάχιστον 18 ετών. Κατά την εγγραφή επιβεβαιώνετε ότι είστε τουλάχιστον 18 ετών. Αν διαπιστώσουμε ότι ένας λογαριασμός ανήκει σε ανήλικο, διαγράφουμε τον λογαριασμό και τα δεδομένα του.</p>
 
   <h2 id="el-10">10. Ο παρών ιστότοπος</h2>
   <p>Ο ιστότοπος δεν χρησιμοποιεί cookies, δεν περιέχει εργαλεία ανάλυσης ή παρακολούθησης και δεν φορτώνει εξωτερικούς πόρους (γραμματοσειρές, σενάρια, εικόνες). Η επιλογή γλώσσας κρατιέται μόνο στη διεύθυνση της σελίδας (<code>?lang=</code>). Ο ιστότοπος φιλοξενείται στο GitHub Pages· το GitHub επεξεργάζεται τις διευθύνσεις IP των επισκεπτών στα τεχνικά του αρχεία για την ασφάλεια και τη λειτουργία του ιστότοπου.</p>
@@ -349,12 +349,12 @@
   </ul>
 
   <h2 id="en-3">3. What we collect, why, and on what legal basis</h2>
-  <p>The legal bases are the points of GDPR Article 6(1): <strong>(a)</strong> consent, <strong>(b)</strong> performance of a contract, that is, providing this service, <strong>(c)</strong> legal obligation, <strong>(f)</strong> legitimate interests.</p>
+  <p>To use any data we need one of the legal bases in GDPR Article 6(1). The table shows them by letter: <strong>(a)</strong> consent: you gave permission and can withdraw it at any time; <strong>(b)</strong> contract: the data is needed to provide the service you use; <strong>(c)</strong> legal obligation: a law requires it; <strong>(f)</strong> legitimate interests: we have a justified purpose, such as security, that does not outweigh your rights.</p>
   <div class="table-scroll">
   <table>
     <thead><tr><th>Data</th><th>What for</th><th>Basis</th></tr></thead>
     <tbody>
-      <tr><td><strong>Account:</strong> full name, email, password (stored only as a bcrypt hash, never in plain text), account type (worker/employer), language, sign-up and last sign-in date</td><td>Creating your account, signing in, sending emails, deleting accounts that have not been used for a long time</td><td>(b)</td></tr>
+      <tr><td><strong>Account:</strong> full name, email, password (never in plain text; stored with bcrypt in a form that cannot be turned back into the password), account type (worker/employer), language, sign-up and last sign-in date</td><td>Creating your account, signing in, sending emails, deleting accounts that have not been used for a long time</td><td>(b)</td></tr>
       <tr><td><strong>Verification codes:</strong> 6-digit codes sent to your email at sign-up and for password resets</td><td>Confirming the email address is yours, resetting your password</td><td>(b), (f) security</td></tr>
       <tr><td><strong>Worker profile:</strong> age, citizenship, type of identity document, work permit and other document details, trade and skills, welding methods and positions, certificates (A1, VCA/SCC, EHIC and others), machinery, driving licence classes, experience and work history, languages, reference, availability, preferred countries, willingness to travel</td><td>Showing your profile to employers you apply to; if you switch it on, letting employers with matching jobs find you; creating a CV</td><td>(b)</td></tr>
       <tr><td><strong>Profile photo</strong> (optional) and <strong>CV file</strong> (PDF, optional)</td><td>Showing them on your profile to employers</td><td>(a) for the photo; (b) for the CV</td></tr>
@@ -399,7 +399,7 @@
     </tbody>
   </table>
   </div>
-  <p><strong>Transfers outside the EU:</strong> Some of these providers are based in the USA or may access data from outside the EU. For these transfers we rely on the EU-U.S. Data Privacy Framework where the provider is certified (GDPR Article 45) and otherwise on the European Commission's standard contractual clauses (GDPR Article 46).</p>
+  <p><strong>Transfers outside the EU:</strong> Some of these providers are based in the USA or may access data from outside the EU. For these transfers we rely on the EU-U.S. Data Privacy Framework where the provider is certified (GDPR Article 45) and otherwise on the standard data protection contracts approved by the European Commission (GDPR Article 46). Both exist so that your data is protected outside the EU as it would be inside it.</p>
 
   <h2 id="en-6">6. How long we keep data</h2>
   <div class="table-scroll">
@@ -425,16 +425,16 @@
     <li><strong>Access</strong> (Article 15): find out what data we hold about you and get a copy.</li>
     <li><strong>Rectification</strong> (Article 16): correct inaccurate data. You can do most of this yourself by editing your profile in the app.</li>
     <li><strong>Erasure</strong> (Article 17): delete your account and data. <a href="delete-account.html">How?</a></li>
-    <li><strong>Restriction of processing</strong> (Article 18).</li>
+    <li><strong>Restriction of processing</strong> (Article 18): ask us to keep your data without deleting it but also without using it, for example while an objection of yours is being reviewed.</li>
     <li><strong>Data portability</strong> (Article 20): receive the data you gave us in a common, machine-readable format.</li>
     <li><strong>Object</strong> (Article 21): object to processing based on legitimate interests.</li>
-    <li><strong>Withdraw consent</strong> (Article 7(3)): you can remove your photo or switch off "Visible to employers" at any time. Withdrawing does not make earlier processing unlawful.</li>
+    <li><strong>Withdraw consent</strong> (Article 7(3)): you can remove your photo or switch off "Visible to employers" at any time. If you withdraw it, what was done before that stays lawful.</li>
   </ul>
   <p>To use your rights, write from your account's email address to <a href="mailto:privacy@exojobs.eu">privacy@exojobs.eu</a>. We answer within one month; for complex requests this can be extended by two more months, and we will tell you why. We may ask for extra information to confirm your identity.</p>
-  <p><strong>Right to complain:</strong> If you think your data is processed unlawfully, you can complain to the Hellenic Data Protection Authority (HDPA): Kifisias 1-3, 115 23 Athens, Greece, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. You can also turn to the data protection authority of the EU country where you live or work. If you write to us first, we will try to solve the issue together.</p>
+  <p><strong>Right to complain:</strong> If you think your data is processed unlawfully, you can complain to the Hellenic Data Protection Authority (HDPA): Kifisias 1-3, 115 23 Athens, Greece, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. You can also turn to the data protection authority of the country where you live or work, or where the problem happened. If you write to us first, we will try to solve the issue together.</p>
 
   <h2 id="en-8">8. Security</h2>
-  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored only as bcrypt hashes. Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Administrator access to data is limited. If there is a data breach, we notify the HDPA within 72 hours where required, and you as well if there is a high risk.</p>
+  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored in a form that cannot be turned back into the password (bcrypt). Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Administrator access to data is limited. If there is a data breach, we notify the Hellenic Data Protection Authority (HDPA) within 72 hours where required, and you as well if there is a high risk.</p>
 
   <h2 id="en-9">9. Age limit</h2>
   <p>ExoJobs is only for people aged 18 or older. When you sign up you confirm that you are 18 or older. If we learn that an account belongs to someone under 18, we delete the account and its data.</p>
