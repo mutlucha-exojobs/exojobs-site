@@ -1,0 +1,17 @@
+[
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "eu.exojobs.app",
+      "sha256_cert_fingerprints": ["0A:06:35:4B:5F:F8:E4:69:ED:50:3F:EC:C7:94:97:64:DC:2A:FB:BB:AA:4C:AD:9D:20:86:78:3E:10:89:49:37"]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.get_login_creds"],
+    "target": {
+      "namespace": "web",
+      "site": "https://exojobs.eu"
+    }
+  }
+]
