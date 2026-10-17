@@ -43,7 +43,7 @@
 
 <!-- ============================== TÜRKÇE ============================== -->
 <article class="card" data-l="tr" lang="tr">
-  <p class="meta">Yürürlük tarihi: 16 Ekim 2026</p>
+  <p class="meta">Yürürlük tarihi: 17 Ekim 2026</p>
 
   <nav class="toc" aria-label="İçindekiler">
     <p>İçindekiler</p>
@@ -71,7 +71,7 @@
   <h2 id="tr-2">2. Kısaca</h2>
   <ul>
     <li>Sadece iş platformunu çalıştırmak için gereken verileri topluyoruz.</li>
-    <li>Reklam yok, takip yok, analitik araç yok. Verilerini satmıyor, reklam için kimseyle paylaşmıyoruz.</li>
+    <li>Reklam yok, takip yok, analitik araç yok (hata kaydı için yalnızca kişisel veri içermeyen bir araç var, bölüm 3). Verilerini satmıyor, reklam için kimseyle paylaşmıyoruz.</li>
     <li>Sunucumuz ve veritabanımız AB'de, Frankfurt'ta (Almanya).</li>
     <li>Hesabını istediğin an uygulamadan silebilirsin; hesabın ve ona bağlı veriler hemen silinir.</li>
   </ul>
@@ -92,9 +92,13 @@
       <tr><td><strong>Başvurular:</strong> hangi ilana başvurulduğu, ön yazı, durum (gönderildi, kabul, ret, geri çekildi), tarihler; kaydedilen ilanlar ve davetler</td><td>Başvuru sürecini yürütmek</td><td>(b)</td></tr>
       <tr><td><strong>Mesajlar:</strong> başvuru kabul edildikten sonra işveren ile işçi arasındaki yazışmalar</td><td>Mesajları iletmek. Mesajlarını okumayız; sadece şikâyet edilen bir mesajı incelemek ya da yasal bir zorunluluk olduğunda bakarız.</td><td>(b); şikâyet incelemesi (f) ve (c)</td></tr>
       <tr><td><strong>Çalışma saatleri:</strong> vardiyalar, proje adları, notlar, ücret ve para birimi ayarları</td><td>Saatlerini ve kazancını hesaplamak. Bu bilgiler sadece sana görünür.</td><td>(b)</td></tr>
-      <tr><td><strong>Bildirimler:</strong> uygulama içi bildirimler, telefonunun bildirim anahtarı (push token), e-posta bildirimi tercihi</td><td>Yeni başvuru, mesaj, karar ve davetleri haber vermek. Telefon bildirimleri sadece telefonunda izin verirsen gönderilir.</td><td>(b)</td></tr>
+      <tr><td><strong>Bildirimler:</strong> uygulama içi bildirimler, telefonunun bildirim anahtarı (push token), e-posta bildirimi tercihi</td><td>Yeni başvuru, mesaj, karar ve davetleri haber vermek. Telefon bildirimleri sadece telefonunda izin verirsen gönderilir. <strong>Güvenlik e-postaları</strong> (admin giriş kodu, yeni cihazdan giriş uyarısı, "şifren değiştirildi" e-postası) hesabını korumak için e-posta bildirimi tercihinden bağımsız gönderilir.</td><td>(b)</td></tr>
       <tr><td><strong>Şikâyet ve engelleme kayıtları:</strong> kimin neyi (ilan, mesaj, kullanıcı) hangi nedenle şikâyet ettiği, isteğe bağlı not, inceleme durumu; kimin kimi engellediği</td><td>Kullanıcıları korumak, şikâyetleri incelemek, kötüye kullanımı önlemek</td><td>(f) güvenlik; (c) yasal yükümlülükler (ör. AB Dijital Hizmetler Yasası)</td></tr>
-      <tr><td><strong>Güvenlik ve teknik veriler:</strong> başarısız giriş ve kod denemesi sayaçları; barındırma sağlayıcısının teknik kayıtları (IP adresi, zaman, istenen adres, hata mesajları)</td><td>Hesapları korumak, saldırıları engellemek, hataları çözmek</td><td>(f)</td></tr>
+      <tr><td><strong>Güvenlik ve teknik veriler:</strong> barındırma sağlayıcısının teknik kayıtları (IP adresi, zaman, istenen adres, hata mesajları)</td><td>Hesapları korumak, saldırıları engellemek, hataları çözmek</td><td>(f)</td></tr>
+      <tr><td><strong>Hız sınırı sayaçları:</strong> IP adresin ve kullanıcı kimliğin, yapılan işlem sayısıyla birlikte (ör. hatalı giriş, kod isteme, mesaj gönderme sayısı) kısa süreli sayaçlarda tutulur</td><td>Kötüye kullanımı ve kaba kuvvet saldırılarını önlemek. Sayaçlar dakikalardan en uzun 1 güne kadar sürer ve süre dolunca kendiliğinden silinir.</td><td>(f) güvenlik</td></tr>
+      <tr><td><strong>Bilinen cihazlar:</strong> uygulamanın ürettiği rastgele cihaz kimliğinin özeti (kimliğin kendisi değil), cihaz modeli, işletim sistemi, ilk ve son giriş tarihi. IP adresi ve konum saklanmaz.</td><td>Hesabına yeni bir cihazdan girildiğinde seni e-postayla uyarmak. Hesabını silince silinir.</td><td>(f) güvenlik</td></tr>
+      <tr><td><strong>Sızdırılmış şifre kontrolü:</strong> kayıt, şifre sıfırlama ve şifre değiştirmede, şifrenin SHA-1 özetinin yalnızca ilk 5 karakteri Have I Been Pwned hizmetine (Cloudflare altyapısı üzerinden) gönderilir. Şifren, e-postan ya da hesap bilgilerin gönderilmez. Bize hiçbir şey saklanmaz.</td><td>Daha önce sızdırılmış şifrelerin kullanılmasını önlemek</td><td>(f) güvenlik</td></tr>
+      <tr><td><strong>Hata kayıtları:</strong> sunucuda oluşan hatalar Sentry'ye gönderilir. İstek içeriği, e-posta, isim, giriş anahtarı ve çerezler gönderilmez; hata metinlerindeki e-posta adresleri silinir; kullanıcı yalnızca her hata için yeni üretilen rastgele bir kimlikle işaretlenir ve hesabınla ilişkilendirilemez.</td><td>Sorunları bulmak ve düzeltmek</td><td>(f)</td></tr>
       <tr><td><strong>Bize yazdığın e-postalar</strong></td><td>Sorunu çözmek, talebini yanıtlamak</td><td>(b), (c) hak talepleri</td></tr>
     </tbody>
   </table>
@@ -118,7 +122,10 @@
     <thead><tr><th>Sağlayıcı</th><th>Ne yapar</th><th>Konum</th></tr></thead>
     <tbody>
       <tr><td>Render</td><td>Uygulamanın sunucusu (API)</td><td>Frankfurt, Almanya (AB)</td></tr>
-      <tr><td>MongoDB Atlas</td><td>Veritabanı</td><td>Frankfurt, Almanya (AB)</td></tr>
+      <tr><td>Cloudflare</td><td>Sunucunun önündeki ağ; uygulamanın istekleri bu ağdan geçer</td><td>Küresel ağ (ABD)</td></tr>
+      <tr><td>MongoDB Atlas</td><td>Veritabanı ve günlük yedekleri</td><td>Frankfurt, Almanya (AB)</td></tr>
+      <tr><td>Sentry (Functional Software, Inc.)</td><td>Sunucu hata kayıtları</td><td>Almanya (AB); şirket ABD merkezli</td></tr>
+      <tr><td>Have I Been Pwned</td><td>Sızdırılmış şifre kontrolü (yalnızca şifre özetinin ilk 5 karakteri)</td><td>Cloudflare ağı üzerinden</td></tr>
       <tr><td>Resend</td><td>E-posta gönderimi (kodlar, bildirimler, uyarılar)</td><td>ABD</td></tr>
       <tr><td>Expo</td><td>Telefon bildirimlerinin iletilmesi</td><td>ABD</td></tr>
       <tr><td>Apple Push Notification service, Google Firebase Cloud Messaging</td><td>Bildirimin iPhone'a veya Android telefona ulaştırılması</td><td>ABD ve diğer ülkeler</td></tr>
@@ -140,7 +147,11 @@
       <tr><td>Reddedilen başvurular</td><td>Reddedilmeden 6 ay sonra silinir.</td></tr>
       <tr><td>Kapanmış ilanlar</td><td>Kapanmadan 12 ay sonra; başvuruları, sohbetleri ve kaydedilmiş ilan kayıtlarıyla birlikte silinir.</td></tr>
       <tr><td>Şikâyetler</td><td>Yapıldıktan 1 yıl sonra silinir. Hesabını silersen yaptığın şikâyetler ve iki yöndeki engeller hemen silinir; senin hakkındaki şikâyetler 1 yılı dolana kadar kalır.</td></tr>
-      <tr><td>Doğrulama kodları ve deneme sayaçları</td><td>Kısa süre; süresi dolunca kendiliğinden silinir.</td></tr>
+      <tr><td>Doğrulama kodları</td><td>15 dakika; süresi dolunca kendiliğinden silinir.</td></tr>
+      <tr><td>Hız sınırı sayaçları</td><td>Dakikalardan en uzun 1 güne kadar; süre dolunca kendiliğinden silinir.</td></tr>
+      <tr><td>Bilinen cihazlar</td><td>Hesabını silene kadar; hesap silinince hemen silinir.</td></tr>
+      <tr><td>Hata kayıtları (Sentry)</td><td>30 gün (Sentry'nin ücretsiz planındaki süre), sonra Sentry tarafından silinir.</td></tr>
+      <tr><td>Veritabanı yedekleri</td><td>Günlük yedekler MongoDB Atlas'ta (Frankfurt) 8 gün saklanır. Sildiğin veriler en geç bu sürenin sonunda yedeklerden de kalkar.</td></tr>
       <tr><td>Barındırma sağlayıcısının teknik kayıtları</td><td>Sağlayıcının kısa kayıt süresi boyunca.</td></tr>
       <tr><td>Bize yazdığın e-postalar</td><td>Talebini yanıtlamak ve yanıtladığımızı gösterebilmek için gerektiği kadar.</td></tr>
     </tbody>
@@ -162,7 +173,7 @@
   <p><strong>Şikâyet hakkı:</strong> Verilerinin hukuka aykırı işlendiğini düşünüyorsan Yunanistan Kişisel Verileri Koruma Kurumu'na (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, HDPA) şikâyette bulunabilirsin: Kifisias 1-3, 115 23 Atina, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Yaşadığın, çalıştığın ya da sorunun yaşandığı ülkenin veri koruma kurumuna da başvurabilirsin. Önce bize yazarsan sorunu birlikte çözmeye çalışırız.</p>
 
   <h2 id="tr-8">8. Güvenlik</h2>
-  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler, şifreye geri çevrilemeyen bir biçimde (bcrypt) saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde Yunanistan Kişisel Verileri Koruma Kurumu'na (HDPA), yüksek risk varsa sana da haber veririz.</p>
+  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler, şifreye geri çevrilemeyen bir biçimde (bcrypt) saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Kayıt, şifre sıfırlama ve şifre değiştirmede sızdırılmış şifreler reddedilir. Hesabına yeni bir cihazdan girildiğinde e-postayla uyarılırsın. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde Yunanistan Kişisel Verileri Koruma Kurumu'na (HDPA), yüksek risk varsa sana da haber veririz.</p>
 
   <h2 id="tr-9">9. Yaş sınırı</h2>
   <p>ExoJobs sadece en az 18 yaşında olanlar içindir. Kayıt olurken en az 18 yaşında olduğunu onaylarsın. 18 yaşından küçük birine ait bir hesap olduğunu öğrenirsek hesabı ve verilerini sileriz.</p>
@@ -179,7 +190,7 @@
 
 <!-- ============================== ΕΛΛΗΝΙΚΑ ============================== -->
 <article class="card" data-l="el" lang="el">
-  <p class="meta">Ημερομηνία ισχύος: 16 Οκτωβρίου 2026</p>
+  <p class="meta">Ημερομηνία ισχύος: 17 Οκτωβρίου 2026</p>
 
   <nav class="toc" aria-label="Περιεχόμενα">
     <p>Περιεχόμενα</p>
@@ -207,7 +218,7 @@
   <h2 id="el-2">2. Με λίγα λόγια</h2>
   <ul>
     <li>Συλλέγουμε μόνο ό,τι χρειάζεται για να λειτουργεί η πλατφόρμα εργασίας.</li>
-    <li>Χωρίς διαφημίσεις, χωρίς παρακολούθηση, χωρίς εργαλεία ανάλυσης. Δεν πουλάμε τα δεδομένα σας και δεν τα μοιραζόμαστε για διαφημιστικούς σκοπούς.</li>
+    <li>Χωρίς διαφημίσεις, χωρίς παρακολούθηση, χωρίς εργαλεία ανάλυσης (για την καταγραφή σφαλμάτων χρησιμοποιούμε μόνο ένα εργαλείο χωρίς προσωπικά δεδομένα, ενότητα 3). Δεν πουλάμε τα δεδομένα σας και δεν τα μοιραζόμαστε για διαφημιστικούς σκοπούς.</li>
     <li>Ο διακομιστής και η βάση δεδομένων μας βρίσκονται στην ΕΕ, στη Φρανκφούρτη (Γερμανία).</li>
     <li>Μπορείτε να διαγράψετε τον λογαριασμό σας από την εφαρμογή όποτε θέλετε· ο λογαριασμός και τα δεδομένα του διαγράφονται αμέσως.</li>
   </ul>
@@ -228,9 +239,13 @@
       <tr><td><strong>Αιτήσεις:</strong> σε ποια αγγελία, συνοδευτικό σημείωμα, κατάσταση (εστάλη, εγκρίθηκε, απορρίφθηκε, ανακλήθηκε), ημερομηνίες· αποθηκευμένες αγγελίες και προσκλήσεις</td><td>Διεκπεραίωση της διαδικασίας αιτήσεων</td><td>(β)</td></tr>
       <tr><td><strong>Μηνύματα:</strong> η επικοινωνία εργοδότη και εργαζομένου μετά την έγκριση της αίτησης</td><td>Παράδοση μηνυμάτων. Δεν διαβάζουμε τα μηνύματά σας· τα εξετάζουμε μόνο όταν ένα μήνυμα αναφερθεί σε εμάς ή όταν το απαιτεί ο νόμος.</td><td>(β)· εξέταση αναφορών (στ) και (γ)</td></tr>
       <tr><td><strong>Ώρες εργασίας:</strong> βάρδιες, ονόματα έργων, σημειώσεις, ρυθμίσεις αμοιβής και νομίσματος</td><td>Υπολογισμός ωρών και αποδοχών. Είναι ορατές μόνο σε εσάς.</td><td>(β)</td></tr>
-      <tr><td><strong>Ειδοποιήσεις:</strong> ειδοποιήσεις μέσα στην εφαρμογή, αναγνωριστικό ειδοποιήσεων της συσκευής (push token), προτίμηση για ειδοποιήσεις email</td><td>Ενημέρωση για νέες αιτήσεις, μηνύματα, αποφάσεις και προσκλήσεις. Ειδοποιήσεις στο τηλέφωνο στέλνονται μόνο αν το επιτρέψετε στη συσκευή σας.</td><td>(β)</td></tr>
+      <tr><td><strong>Ειδοποιήσεις:</strong> ειδοποιήσεις μέσα στην εφαρμογή, αναγνωριστικό ειδοποιήσεων της συσκευής (push token), προτίμηση για ειδοποιήσεις email</td><td>Ενημέρωση για νέες αιτήσεις, μηνύματα, αποφάσεις και προσκλήσεις. Ειδοποιήσεις στο τηλέφωνο στέλνονται μόνο αν το επιτρέψετε στη συσκευή σας. Τα <strong>email ασφαλείας</strong> (κωδικός σύνδεσης διαχειριστή, ειδοποίηση για σύνδεση από νέα συσκευή, email «ο κωδικός σας άλλαξε») αποστέλλονται για την προστασία του λογαριασμού σας ανεξάρτητα από την προτίμηση ειδοποιήσεων email.</td><td>(β)</td></tr>
       <tr><td><strong>Αναφορές και αποκλεισμοί:</strong> ποιος ανέφερε τι (αγγελία, μήνυμα, χρήστη) και για ποιο λόγο, προαιρετική σημείωση, κατάσταση εξέτασης· ποιος απέκλεισε ποιον</td><td>Προστασία των χρηστών, εξέταση αναφορών, πρόληψη κατάχρησης</td><td>(στ) ασφάλεια· (γ) νομικές υποχρεώσεις (π.χ. Πράξη για τις Ψηφιακές Υπηρεσίες της ΕΕ)</td></tr>
-      <tr><td><strong>Δεδομένα ασφάλειας και τεχνικά δεδομένα:</strong> μετρητές αποτυχημένων συνδέσεων και κωδικών· τεχνικά αρχεία καταγραφής του παρόχου φιλοξενίας (διεύθυνση IP, ώρα, ζητούμενη διεύθυνση, μηνύματα σφάλματος)</td><td>Προστασία λογαριασμών, αποτροπή επιθέσεων, επίλυση σφαλμάτων</td><td>(στ)</td></tr>
+      <tr><td><strong>Δεδομένα ασφάλειας και τεχνικά δεδομένα:</strong> τεχνικά αρχεία καταγραφής του παρόχου φιλοξενίας (διεύθυνση IP, ώρα, ζητούμενη διεύθυνση, μηνύματα σφάλματος)</td><td>Προστασία λογαριασμών, αποτροπή επιθέσεων, επίλυση σφαλμάτων</td><td>(στ)</td></tr>
+      <tr><td><strong>Μετρητές ορίου ρυθμού:</strong> η διεύθυνση IP και το αναγνωριστικό χρήστη σας, μαζί με τον αριθμό ενεργειών (π.χ. αποτυχημένες συνδέσεις, αιτήματα κωδικού, αποστολές μηνυμάτων), φυλάσσονται σε βραχύβιους μετρητές</td><td>Πρόληψη κατάχρησης και επιθέσεων εξαντλητικών δοκιμών. Οι μετρητές διαρκούν από λίγα λεπτά έως το πολύ 1 ημέρα και διαγράφονται αυτόματα όταν λήξουν.</td><td>(στ) ασφάλεια</td></tr>
+      <tr><td><strong>Γνωστές συσκευές:</strong> η σύνοψη (hash) του τυχαίου αναγνωριστικού συσκευής που δημιουργεί η εφαρμογή (όχι το ίδιο το αναγνωριστικό), το μοντέλο συσκευής, το λειτουργικό σύστημα, η πρώτη και η τελευταία ημερομηνία σύνδεσης. Δεν αποθηκεύεται διεύθυνση IP ούτε τοποθεσία.</td><td>Να σας ειδοποιούμε με email όταν γίνεται σύνδεση στον λογαριασμό σας από νέα συσκευή. Διαγράφεται όταν διαγράψετε τον λογαριασμό σας.</td><td>(στ) ασφάλεια</td></tr>
+      <tr><td><strong>Έλεγχος διαρρεύσαντος κωδικού:</strong> κατά την εγγραφή, την επαναφορά και την αλλαγή κωδικού, μόνο οι πρώτοι 5 χαρακτήρες της σύνοψης SHA-1 του κωδικού αποστέλλονται στην υπηρεσία Have I Been Pwned (μέσω της υποδομής της Cloudflare). Ο κωδικός, το email και τα στοιχεία του λογαριασμού σας δεν αποστέλλονται. Σε εμάς δεν αποθηκεύεται τίποτα.</td><td>Αποφυγή χρήσης κωδικών που έχουν διαρρεύσει στο παρελθόν</td><td>(στ) ασφάλεια</td></tr>
+      <tr><td><strong>Αρχεία σφαλμάτων:</strong> τα σφάλματα του διακομιστή αποστέλλονται στο Sentry. Δεν αποστέλλονται το περιεχόμενο των αιτημάτων, το email, το όνομα, το κλειδί σύνδεσης και τα cookies· οι διευθύνσεις email μέσα στα μηνύματα σφάλματος αφαιρούνται· ο χρήστης επισημαίνεται μόνο με ένα τυχαίο αναγνωριστικό που δημιουργείται εκ νέου για κάθε σφάλμα και δεν συνδέεται με τον λογαριασμό σας.</td><td>Εντοπισμός και διόρθωση προβλημάτων</td><td>(στ)</td></tr>
       <tr><td><strong>Email που μας στέλνετε</strong></td><td>Επίλυση του προβλήματος, απάντηση στο αίτημά σας</td><td>(β), (γ) αιτήματα δικαιωμάτων</td></tr>
     </tbody>
   </table>
@@ -254,7 +269,10 @@
     <thead><tr><th>Πάροχος</th><th>Τι κάνει</th><th>Τοποθεσία</th></tr></thead>
     <tbody>
       <tr><td>Render</td><td>Διακομιστής της εφαρμογής (API)</td><td>Φρανκφούρτη, Γερμανία (ΕΕ)</td></tr>
-      <tr><td>MongoDB Atlas</td><td>Βάση δεδομένων</td><td>Φρανκφούρτη, Γερμανία (ΕΕ)</td></tr>
+      <tr><td>Cloudflare</td><td>Δίκτυο μπροστά από τον διακομιστή· τα αιτήματα της εφαρμογής περνούν από αυτό</td><td>Παγκόσμιο δίκτυο (ΗΠΑ)</td></tr>
+      <tr><td>MongoDB Atlas</td><td>Βάση δεδομένων και ημερήσια αντίγραφα ασφαλείας</td><td>Φρανκφούρτη, Γερμανία (ΕΕ)</td></tr>
+      <tr><td>Sentry (Functional Software, Inc.)</td><td>Αρχεία σφαλμάτων του διακομιστή</td><td>Γερμανία (ΕΕ)· η εταιρεία εδρεύει στις ΗΠΑ</td></tr>
+      <tr><td>Have I Been Pwned</td><td>Έλεγχος διαρρεύσαντων κωδικών (μόνο οι πρώτοι 5 χαρακτήρες της σύνοψης)</td><td>Μέσω του δικτύου της Cloudflare</td></tr>
       <tr><td>Resend</td><td>Αποστολή email (κωδικοί, ειδοποιήσεις, προειδοποιήσεις)</td><td>ΗΠΑ</td></tr>
       <tr><td>Expo</td><td>Προώθηση ειδοποιήσεων στο τηλέφωνο</td><td>ΗΠΑ</td></tr>
       <tr><td>Apple Push Notification service, Google Firebase Cloud Messaging</td><td>Παράδοση της ειδοποίησης σε iPhone ή Android</td><td>ΗΠΑ και άλλες χώρες</td></tr>
@@ -276,7 +294,11 @@
       <tr><td>Απορριφθείσες αιτήσεις</td><td>Διαγράφονται 6 μήνες μετά την απόρριψη.</td></tr>
       <tr><td>Κλειστές αγγελίες</td><td>Διαγράφονται 12 μήνες μετά το κλείσιμο, μαζί με τις αιτήσεις, τις συνομιλίες και τις αποθηκεύσεις τους.</td></tr>
       <tr><td>Αναφορές</td><td>Διαγράφονται 1 χρόνο μετά την υποβολή. Αν διαγράψετε τον λογαριασμό σας, οι αναφορές που κάνατε και οι αποκλεισμοί και προς τις δύο κατευθύνσεις διαγράφονται αμέσως· οι αναφορές για εσάς παραμένουν μέχρι να συμπληρωθεί 1 χρόνος.</td></tr>
-      <tr><td>Κωδικοί επαλήθευσης και μετρητές προσπαθειών</td><td>Για λίγο· διαγράφονται αυτόματα όταν λήξουν.</td></tr>
+      <tr><td>Κωδικοί επαλήθευσης</td><td>15 λεπτά· διαγράφονται αυτόματα όταν λήξουν.</td></tr>
+      <tr><td>Μετρητές ορίου ρυθμού</td><td>Από λίγα λεπτά έως το πολύ 1 ημέρα· διαγράφονται αυτόματα όταν λήξουν.</td></tr>
+      <tr><td>Γνωστές συσκευές</td><td>Μέχρι να διαγράψετε τον λογαριασμό· διαγράφονται αμέσως μαζί του.</td></tr>
+      <tr><td>Αρχεία σφαλμάτων (Sentry)</td><td>30 ημέρες (η διάρκεια του δωρεάν πακέτου του Sentry), και μετά διαγράφονται από το Sentry.</td></tr>
+      <tr><td>Αντίγραφα ασφαλείας της βάσης δεδομένων</td><td>Τα ημερήσια αντίγραφα φυλάσσονται στο MongoDB Atlas (Φρανκφούρτη) για 8 ημέρες. Τα δεδομένα που διαγράφετε αφαιρούνται και από τα αντίγραφα το αργότερο στο τέλος αυτής της περιόδου.</td></tr>
       <tr><td>Τεχνικά αρχεία του παρόχου φιλοξενίας</td><td>Για τη σύντομη περίοδο τήρησης του παρόχου.</td></tr>
       <tr><td>Email που μας στέλνετε</td><td>Όσο χρειάζεται για να απαντήσουμε στο αίτημά σας και να μπορούμε να αποδείξουμε ότι απαντήσαμε.</td></tr>
     </tbody>
@@ -298,7 +320,7 @@
   <p><strong>Δικαίωμα καταγγελίας:</strong> Αν θεωρείτε ότι τα δεδομένα σας υποβάλλονται σε επεξεργασία κατά παράβαση του νόμου, μπορείτε να υποβάλετε καταγγελία στην Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα: Κηφισίας 1-3, 115 23 Αθήνα, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Μπορείτε επίσης να απευθυνθείτε στην αρχή προστασίας δεδομένων της χώρας όπου ζείτε, εργάζεστε ή όπου συνέβη το πρόβλημα. Αν μας γράψετε πρώτα, θα προσπαθήσουμε να λύσουμε το θέμα μαζί.</p>
 
   <h2 id="el-8">8. Ασφάλεια</h2>
-  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό (bcrypt). Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
+  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό (bcrypt). Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Κατά την εγγραφή, την επαναφορά και την αλλαγή κωδικού απορρίπτονται κωδικοί που έχουν διαρρεύσει. Όταν γίνεται σύνδεση στον λογαριασμό σας από νέα συσκευή, σας ειδοποιούμε με email. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
 
   <h2 id="el-9">9. Όριο ηλικίας</h2>
   <p>Το ExoJobs απευθύνεται μόνο σε άτομα τουλάχιστον 18 ετών. Κατά την εγγραφή επιβεβαιώνετε ότι είστε τουλάχιστον 18 ετών. Αν διαπιστώσουμε ότι ένας λογαριασμός ανήκει σε ανήλικο, διαγράφουμε τον λογαριασμό και τα δεδομένα του.</p>
@@ -315,7 +337,7 @@
 
 <!-- ============================== ENGLISH ============================== -->
 <article class="card" data-l="en" lang="en">
-  <p class="meta">Effective date: 16 October 2026</p>
+  <p class="meta">Effective date: 17 October 2026</p>
 
   <nav class="toc" aria-label="Contents">
     <p>Contents</p>
@@ -343,7 +365,7 @@
   <h2 id="en-2">2. In short</h2>
   <ul>
     <li>We only collect what is needed to run the job platform.</li>
-    <li>No ads, no tracking, no analytics tools. We do not sell your data or share it for advertising.</li>
+    <li>No ads, no tracking, no analytics tools (for error reports we use only a tool that carries no personal data, section 3). We do not sell your data or share it for advertising.</li>
     <li>Our server and database are in the EU, in Frankfurt (Germany).</li>
     <li>You can delete your account in the app at any time; the account and its data are deleted at once.</li>
   </ul>
@@ -364,9 +386,13 @@
       <tr><td><strong>Applications:</strong> which job, cover letter, status (sent, accepted, rejected, withdrawn), dates; saved jobs and invitations</td><td>Running the application process</td><td>(b)</td></tr>
       <tr><td><strong>Messages:</strong> conversations between employer and worker after an application is accepted</td><td>Delivering messages. We do not read your messages; we only look at a message when it is reported to us or when the law requires it.</td><td>(b); review of reports (f) and (c)</td></tr>
       <tr><td><strong>Work hours:</strong> shifts, project names, notes, pay and currency settings</td><td>Calculating your hours and earnings. Only you can see them.</td><td>(b)</td></tr>
-      <tr><td><strong>Notifications:</strong> in-app notifications, your device's push token, your email notification preference</td><td>Telling you about new applications, messages, decisions and invitations. Phone notifications are only sent if you allow them on your phone.</td><td>(b)</td></tr>
+      <tr><td><strong>Notifications:</strong> in-app notifications, your device's push token, your email notification preference</td><td>Telling you about new applications, messages, decisions and invitations. Phone notifications are only sent if you allow them on your phone. <strong>Security emails</strong> (admin sign-in code, new-device sign-in alert, "your password was changed" email) are sent to protect your account regardless of your email notification preference.</td><td>(b)</td></tr>
       <tr><td><strong>Reports and blocks:</strong> who reported what (job, message, user) and why, an optional note, review status; who blocked whom</td><td>Keeping users safe, reviewing reports, preventing abuse</td><td>(f) safety; (c) legal obligations (e.g. the EU Digital Services Act)</td></tr>
-      <tr><td><strong>Security and technical data:</strong> counters of failed sign-ins and code attempts; the hosting provider's technical logs (IP address, time, requested address, error messages)</td><td>Protecting accounts, stopping attacks, fixing errors</td><td>(f)</td></tr>
+      <tr><td><strong>Security and technical data:</strong> the hosting provider's technical logs (IP address, time, requested address, error messages)</td><td>Protecting accounts, stopping attacks, fixing errors</td><td>(f)</td></tr>
+      <tr><td><strong>Rate-limit counters:</strong> your IP address and user ID, together with the number of actions taken (e.g. failed sign-ins, code requests, messages sent), kept in short-lived counters</td><td>Preventing abuse and brute-force attacks. Counters last from a few minutes up to 1 day at most and are deleted automatically when they expire.</td><td>(f) security</td></tr>
+      <tr><td><strong>Known devices:</strong> a hash of the random device ID the app generates (not the ID itself), device model, operating system, first and last sign-in date. No IP address or location is stored.</td><td>Warning you by email when your account is signed in from a new device. Deleted when you delete your account.</td><td>(f) security</td></tr>
+      <tr><td><strong>Leaked-password check:</strong> at sign-up, password reset and password change, only the first 5 characters of the password's SHA-1 hash are sent to the Have I Been Pwned service (through Cloudflare's infrastructure). Your password, email or account details are not sent. We store nothing about it.</td><td>Preventing the use of passwords that have been leaked before</td><td>(f) security</td></tr>
+      <tr><td><strong>Error reports:</strong> errors on the server are sent to Sentry. Request contents, email, name, sign-in key and cookies are not sent; email addresses in error messages are removed; the user is marked only with a random ID that is newly generated for every error and cannot be linked to your account.</td><td>Finding and fixing problems</td><td>(f)</td></tr>
       <tr><td><strong>Emails you send us</strong></td><td>Solving your problem, answering your request</td><td>(b), (c) rights requests</td></tr>
     </tbody>
   </table>
@@ -390,7 +416,10 @@
     <thead><tr><th>Provider</th><th>What it does</th><th>Location</th></tr></thead>
     <tbody>
       <tr><td>Render</td><td>The app's server (API)</td><td>Frankfurt, Germany (EU)</td></tr>
-      <tr><td>MongoDB Atlas</td><td>Database</td><td>Frankfurt, Germany (EU)</td></tr>
+      <tr><td>Cloudflare</td><td>The network in front of the server; the app's requests pass through it</td><td>Global network (USA)</td></tr>
+      <tr><td>MongoDB Atlas</td><td>Database and daily backups</td><td>Frankfurt, Germany (EU)</td></tr>
+      <tr><td>Sentry (Functional Software, Inc.)</td><td>Server error reports</td><td>Germany (EU); the company is US-based</td></tr>
+      <tr><td>Have I Been Pwned</td><td>Leaked-password check (only the first 5 characters of the hash)</td><td>Through Cloudflare's network</td></tr>
       <tr><td>Resend</td><td>Sending emails (codes, notifications, warnings)</td><td>USA</td></tr>
       <tr><td>Expo</td><td>Forwarding phone notifications</td><td>USA</td></tr>
       <tr><td>Apple Push Notification service, Google Firebase Cloud Messaging</td><td>Delivering the notification to an iPhone or Android phone</td><td>USA and other countries</td></tr>
@@ -412,7 +441,11 @@
       <tr><td>Rejected applications</td><td>Deleted 6 months after the rejection.</td></tr>
       <tr><td>Closed job listings</td><td>Deleted 12 months after closing, together with their applications, conversations and saved references.</td></tr>
       <tr><td>Reports</td><td>Deleted 1 year after they were made. If you delete your account, the reports you made and blocks in both directions are deleted at once; reports about you stay until their 1 year is over.</td></tr>
-      <tr><td>Verification codes and attempt counters</td><td>A short time; they are deleted automatically when they expire.</td></tr>
+      <tr><td>Verification codes</td><td>15 minutes; deleted automatically when they expire.</td></tr>
+      <tr><td>Rate-limit counters</td><td>From a few minutes up to 1 day at most; deleted automatically when they expire.</td></tr>
+      <tr><td>Known devices</td><td>Until you delete your account; deleted at once with it.</td></tr>
+      <tr><td>Error reports (Sentry)</td><td>30 days (the period on Sentry's free plan), then deleted by Sentry.</td></tr>
+      <tr><td>Database backups</td><td>Daily backups are kept in MongoDB Atlas (Frankfurt) for 8 days. Data you delete also disappears from the backups at the end of this period at the latest.</td></tr>
       <tr><td>The hosting provider's technical logs</td><td>For the provider's short log retention period.</td></tr>
       <tr><td>Emails you send us</td><td>As long as needed to answer your request and to be able to show that we answered it.</td></tr>
     </tbody>
@@ -434,7 +467,7 @@
   <p><strong>Right to complain:</strong> If you think your data is processed unlawfully, you can complain to the Hellenic Data Protection Authority (HDPA): Kifisias 1-3, 115 23 Athens, Greece, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. You can also turn to the data protection authority of the country where you live or work, or where the problem happened. If you write to us first, we will try to solve the issue together.</p>
 
   <h2 id="en-8">8. Security</h2>
-  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored in a form that cannot be turned back into the password (bcrypt). Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Administrator access to data is limited. If there is a data breach, we notify the Hellenic Data Protection Authority (HDPA) within 72 hours where required, and you as well if there is a high risk.</p>
+  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored in a form that cannot be turned back into the password (bcrypt). Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Leaked passwords are rejected at sign-up, password reset and password change. You are warned by email when your account is signed in from a new device. Administrator access to data is limited. If there is a data breach, we notify the Hellenic Data Protection Authority (HDPA) within 72 hours where required, and you as well if there is a high risk.</p>
 
   <h2 id="en-9">9. Age limit</h2>
   <p>ExoJobs is only for people aged 18 or older. When you sign up you confirm that you are 18 or older. If we learn that an account belongs to someone under 18, we delete the account and its data.</p>
