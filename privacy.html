@@ -43,7 +43,7 @@
 
 <!-- ============================== TÜRKÇE ============================== -->
 <article class="card" data-l="tr" lang="tr">
-  <p class="meta">Yürürlük tarihi: 17 Ekim 2026</p>
+  <p class="meta">Yürürlük tarihi: 18 Ekim 2026</p>
 
   <nav class="toc" aria-label="İçindekiler">
     <p>İçindekiler</p>
@@ -97,6 +97,7 @@
       <tr><td><strong>Güvenlik ve teknik veriler:</strong> barındırma sağlayıcısının teknik kayıtları (IP adresi, zaman, istenen adres, hata mesajları)</td><td>Hesapları korumak, saldırıları engellemek, hataları çözmek</td><td>(f)</td></tr>
       <tr><td><strong>Hız sınırı sayaçları:</strong> IP adresin ve kullanıcı kimliğin, yapılan işlem sayısıyla birlikte (ör. hatalı giriş, kod isteme, mesaj gönderme sayısı) kısa süreli sayaçlarda tutulur</td><td>Kötüye kullanımı ve kaba kuvvet saldırılarını önlemek. Sayaçlar dakikalardan en uzun 1 güne kadar sürer ve süre dolunca kendiliğinden silinir.</td><td>(f) güvenlik</td></tr>
       <tr><td><strong>Bilinen cihazlar:</strong> uygulamanın ürettiği rastgele cihaz kimliğinin özeti (kimliğin kendisi değil), cihaz modeli, işletim sistemi, ilk ve son giriş tarihi. IP adresi ve konum saklanmaz.</td><td>Hesabına yeni bir cihazdan girildiğinde seni e-postayla uyarmak. Hesabını silince silinir.</td><td>(f) güvenlik</td></tr>
+      <tr><td><strong>Oturumlar:</strong> her giriş için oturum kaydı (giriş ve son kullanım tarihi, cihaz kimliğinin özeti, bu telefonun bildirim anahtarı). IP adresi ve konum saklanmaz.</td><td>Çıkış yapınca, şifre değişince ya da sıfırlanınca oturumu sunucuda da kapatmak; çıkıştan sonra telefona bildirim gitmemesi.</td><td>(f) güvenlik</td></tr>
       <tr><td><strong>Sızdırılmış şifre kontrolü:</strong> kayıt, şifre sıfırlama ve şifre değiştirmede, şifrenin SHA-1 özetinin yalnızca ilk 5 karakteri Have I Been Pwned hizmetine (Cloudflare altyapısı üzerinden) gönderilir. Şifren, e-postan ya da hesap bilgilerin gönderilmez. Bize hiçbir şey saklanmaz.</td><td>Daha önce sızdırılmış şifrelerin kullanılmasını önlemek</td><td>(f) güvenlik</td></tr>
       <tr><td><strong>Hata kayıtları:</strong> sunucuda oluşan hatalar Sentry'ye gönderilir. İstek içeriği, e-posta, isim, giriş anahtarı ve çerezler gönderilmez; hata metinlerindeki e-posta adresleri silinir; kullanıcı yalnızca her hata için yeni üretilen rastgele bir kimlikle işaretlenir ve hesabınla ilişkilendirilemez.</td><td>Sorunları bulmak ve düzeltmek</td><td>(f)</td></tr>
       <tr><td><strong>Bize yazdığın e-postalar</strong></td><td>Sorunu çözmek, talebini yanıtlamak</td><td>(b), (c) hak talepleri</td></tr>
@@ -150,6 +151,7 @@
       <tr><td>Doğrulama kodları</td><td>15 dakika; süresi dolunca kendiliğinden silinir.</td></tr>
       <tr><td>Hız sınırı sayaçları</td><td>Dakikalardan en uzun 1 güne kadar; süre dolunca kendiliğinden silinir.</td></tr>
       <tr><td>Bilinen cihazlar</td><td>Hesabını silene kadar; hesap silinince hemen silinir.</td></tr>
+      <tr><td>Oturumlar</td><td>Son kullanımdan 90 gün sonra. Çıkışta cihaz özeti ve bildirim anahtarı hemen silinir; kalan “kapandı” kaydı en geç 90 gün içinde silinir. Hesap silinince hemen.</td></tr>
       <tr><td>Hata kayıtları (Sentry)</td><td>30 gün (Sentry'nin ücretsiz planındaki süre), sonra Sentry tarafından silinir.</td></tr>
       <tr><td>Veritabanı yedekleri</td><td>Günlük yedekler MongoDB Atlas'ta (Frankfurt) 8 gün saklanır. Sildiğin veriler en geç bu sürenin sonunda yedeklerden de kalkar.</td></tr>
       <tr><td>Barındırma sağlayıcısının teknik kayıtları</td><td>Sağlayıcının kısa kayıt süresi boyunca.</td></tr>
@@ -173,7 +175,7 @@
   <p><strong>Şikâyet hakkı:</strong> Verilerinin hukuka aykırı işlendiğini düşünüyorsan Yunanistan Kişisel Verileri Koruma Kurumu'na (Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα, HDPA) şikâyette bulunabilirsin: Kifisias 1-3, 115 23 Atina, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Yaşadığın, çalıştığın ya da sorunun yaşandığı ülkenin veri koruma kurumuna da başvurabilirsin. Önce bize yazarsan sorunu birlikte çözmeye çalışırız.</p>
 
   <h2 id="tr-8">8. Güvenlik</h2>
-  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler, şifreye geri çevrilemeyen bir biçimde (bcrypt) saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Kayıt, şifre sıfırlama ve şifre değiştirmede sızdırılmış şifreler reddedilir. Hesabına yeni bir cihazdan girildiğinde e-postayla uyarılırsın. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde Yunanistan Kişisel Verileri Koruma Kurumu'na (HDPA), yüksek risk varsa sana da haber veririz.</p>
+  <p>Uygulama ile sunucu arasındaki bütün bağlantılar şifrelidir (HTTPS). Şifreler, şifreye geri çevrilemeyen bir biçimde (bcrypt) saklanır. Giriş anahtarın telefonun güvenli deposunda tutulur. Giriş ve kod denemeleri sınırlıdır. Kayıt, şifre sıfırlama ve şifre değiştirmede sızdırılmış şifreler reddedilir. Hesabına yeni bir cihazdan girildiğinde e-postayla uyarılırsın. Çıkış yaptığında oturumun sunucuda da kapanır; şifreni değiştirince diğer bütün cihazlardaki oturumların kapanır. Verilere yönetici erişimi sınırlıdır. Bir veri ihlali olursa, gerekiyorsa 72 saat içinde Yunanistan Kişisel Verileri Koruma Kurumu'na (HDPA), yüksek risk varsa sana da haber veririz.</p>
 
   <h2 id="tr-9">9. Yaş sınırı</h2>
   <p>ExoJobs sadece en az 18 yaşında olanlar içindir. Kayıt olurken en az 18 yaşında olduğunu onaylarsın. 18 yaşından küçük birine ait bir hesap olduğunu öğrenirsek hesabı ve verilerini sileriz.</p>
@@ -190,7 +192,7 @@
 
 <!-- ============================== ΕΛΛΗΝΙΚΑ ============================== -->
 <article class="card" data-l="el" lang="el">
-  <p class="meta">Ημερομηνία ισχύος: 17 Οκτωβρίου 2026</p>
+  <p class="meta">Ημερομηνία ισχύος: 18 Οκτωβρίου 2026</p>
 
   <nav class="toc" aria-label="Περιεχόμενα">
     <p>Περιεχόμενα</p>
@@ -244,6 +246,7 @@
       <tr><td><strong>Δεδομένα ασφάλειας και τεχνικά δεδομένα:</strong> τεχνικά αρχεία καταγραφής του παρόχου φιλοξενίας (διεύθυνση IP, ώρα, ζητούμενη διεύθυνση, μηνύματα σφάλματος)</td><td>Προστασία λογαριασμών, αποτροπή επιθέσεων, επίλυση σφαλμάτων</td><td>(στ)</td></tr>
       <tr><td><strong>Μετρητές ορίου ρυθμού:</strong> η διεύθυνση IP και το αναγνωριστικό χρήστη σας, μαζί με τον αριθμό ενεργειών (π.χ. αποτυχημένες συνδέσεις, αιτήματα κωδικού, αποστολές μηνυμάτων), φυλάσσονται σε βραχύβιους μετρητές</td><td>Πρόληψη κατάχρησης και επιθέσεων εξαντλητικών δοκιμών. Οι μετρητές διαρκούν από λίγα λεπτά έως το πολύ 1 ημέρα και διαγράφονται αυτόματα όταν λήξουν.</td><td>(στ) ασφάλεια</td></tr>
       <tr><td><strong>Γνωστές συσκευές:</strong> η σύνοψη (hash) του τυχαίου αναγνωριστικού συσκευής που δημιουργεί η εφαρμογή (όχι το ίδιο το αναγνωριστικό), το μοντέλο συσκευής, το λειτουργικό σύστημα, η πρώτη και η τελευταία ημερομηνία σύνδεσης. Δεν αποθηκεύεται διεύθυνση IP ούτε τοποθεσία.</td><td>Να σας ειδοποιούμε με email όταν γίνεται σύνδεση στον λογαριασμό σας από νέα συσκευή. Διαγράφεται όταν διαγράψετε τον λογαριασμό σας.</td><td>(στ) ασφάλεια</td></tr>
+      <tr><td><strong>Συνεδρίες:</strong> μια εγγραφή για κάθε σύνδεση (ημερομηνία σύνδεσης και τελευταίας χρήσης, σύνοψη του αναγνωριστικού συσκευής, push token αυτής της συσκευής). Δεν αποθηκεύεται διεύθυνση IP ούτε τοποθεσία.</td><td>Τερματισμός της συνεδρίας και στον διακομιστή όταν αποσυνδέεστε ή αλλάζετε/επαναφέρετε τον κωδικό· να μη φτάνουν ειδοποιήσεις μετά την αποσύνδεση.</td><td>(στ) ασφάλεια</td></tr>
       <tr><td><strong>Έλεγχος διαρρεύσαντος κωδικού:</strong> κατά την εγγραφή, την επαναφορά και την αλλαγή κωδικού, μόνο οι πρώτοι 5 χαρακτήρες της σύνοψης SHA-1 του κωδικού αποστέλλονται στην υπηρεσία Have I Been Pwned (μέσω της υποδομής της Cloudflare). Ο κωδικός, το email και τα στοιχεία του λογαριασμού σας δεν αποστέλλονται. Σε εμάς δεν αποθηκεύεται τίποτα.</td><td>Αποφυγή χρήσης κωδικών που έχουν διαρρεύσει στο παρελθόν</td><td>(στ) ασφάλεια</td></tr>
       <tr><td><strong>Αρχεία σφαλμάτων:</strong> τα σφάλματα του διακομιστή αποστέλλονται στο Sentry. Δεν αποστέλλονται το περιεχόμενο των αιτημάτων, το email, το όνομα, το κλειδί σύνδεσης και τα cookies· οι διευθύνσεις email μέσα στα μηνύματα σφάλματος αφαιρούνται· ο χρήστης επισημαίνεται μόνο με ένα τυχαίο αναγνωριστικό που δημιουργείται εκ νέου για κάθε σφάλμα και δεν συνδέεται με τον λογαριασμό σας.</td><td>Εντοπισμός και διόρθωση προβλημάτων</td><td>(στ)</td></tr>
       <tr><td><strong>Email που μας στέλνετε</strong></td><td>Επίλυση του προβλήματος, απάντηση στο αίτημά σας</td><td>(β), (γ) αιτήματα δικαιωμάτων</td></tr>
@@ -297,6 +300,7 @@
       <tr><td>Κωδικοί επαλήθευσης</td><td>15 λεπτά· διαγράφονται αυτόματα όταν λήξουν.</td></tr>
       <tr><td>Μετρητές ορίου ρυθμού</td><td>Από λίγα λεπτά έως το πολύ 1 ημέρα· διαγράφονται αυτόματα όταν λήξουν.</td></tr>
       <tr><td>Γνωστές συσκευές</td><td>Μέχρι να διαγράψετε τον λογαριασμό· διαγράφονται αμέσως μαζί του.</td></tr>
+      <tr><td>Συνεδρίες</td><td>90 ημέρες μετά την τελευταία χρήση. Με την αποσύνδεση η σύνοψη συσκευής και το push token διαγράφονται αμέσως· η υπόλοιπη εγγραφή διαγράφεται το αργότερο σε 90 ημέρες. Με τη διαγραφή του λογαριασμού, αμέσως.</td></tr>
       <tr><td>Αρχεία σφαλμάτων (Sentry)</td><td>30 ημέρες (η διάρκεια του δωρεάν πακέτου του Sentry), και μετά διαγράφονται από το Sentry.</td></tr>
       <tr><td>Αντίγραφα ασφαλείας της βάσης δεδομένων</td><td>Τα ημερήσια αντίγραφα φυλάσσονται στο MongoDB Atlas (Φρανκφούρτη) για 8 ημέρες. Τα δεδομένα που διαγράφετε αφαιρούνται και από τα αντίγραφα το αργότερο στο τέλος αυτής της περιόδου.</td></tr>
       <tr><td>Τεχνικά αρχεία του παρόχου φιλοξενίας</td><td>Για τη σύντομη περίοδο τήρησης του παρόχου.</td></tr>
@@ -320,7 +324,7 @@
   <p><strong>Δικαίωμα καταγγελίας:</strong> Αν θεωρείτε ότι τα δεδομένα σας υποβάλλονται σε επεξεργασία κατά παράβαση του νόμου, μπορείτε να υποβάλετε καταγγελία στην Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα: Κηφισίας 1-3, 115 23 Αθήνα, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. Μπορείτε επίσης να απευθυνθείτε στην αρχή προστασίας δεδομένων της χώρας όπου ζείτε, εργάζεστε ή όπου συνέβη το πρόβλημα. Αν μας γράψετε πρώτα, θα προσπαθήσουμε να λύσουμε το θέμα μαζί.</p>
 
   <h2 id="el-8">8. Ασφάλεια</h2>
-  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό (bcrypt). Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Κατά την εγγραφή, την επαναφορά και την αλλαγή κωδικού απορρίπτονται κωδικοί που έχουν διαρρεύσει. Όταν γίνεται σύνδεση στον λογαριασμό σας από νέα συσκευή, σας ειδοποιούμε με email. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
+  <p>Όλες οι συνδέσεις μεταξύ εφαρμογής και διακομιστή είναι κρυπτογραφημένες (HTTPS). Οι κωδικοί αποθηκεύονται σε μορφή που δεν μπορεί να μετατραπεί ξανά στον κωδικό (bcrypt). Το κλειδί σύνδεσης φυλάσσεται στον ασφαλή χώρο αποθήκευσης της συσκευής σας. Οι προσπάθειες σύνδεσης και εισαγωγής κωδικών είναι περιορισμένες. Κατά την εγγραφή, την επαναφορά και την αλλαγή κωδικού απορρίπτονται κωδικοί που έχουν διαρρεύσει. Όταν γίνεται σύνδεση στον λογαριασμό σας από νέα συσκευή, σας ειδοποιούμε με email. Όταν αποσυνδέεστε, η συνεδρία τερματίζεται και στον διακομιστή· όταν αλλάζετε τον κωδικό, τερματίζονται οι συνεδρίες σε όλες τις άλλες συσκευές. Η διαχειριστική πρόσβαση στα δεδομένα είναι περιορισμένη. Σε περίπτωση παραβίασης δεδομένων ενημερώνουμε, όπου απαιτείται, την Αρχή Προστασίας Δεδομένων Προσωπικού Χαρακτήρα μέσα σε 72 ώρες και εσάς, αν υπάρχει υψηλός κίνδυνος.</p>
 
   <h2 id="el-9">9. Όριο ηλικίας</h2>
   <p>Το ExoJobs απευθύνεται μόνο σε άτομα τουλάχιστον 18 ετών. Κατά την εγγραφή επιβεβαιώνετε ότι είστε τουλάχιστον 18 ετών. Αν διαπιστώσουμε ότι ένας λογαριασμός ανήκει σε ανήλικο, διαγράφουμε τον λογαριασμό και τα δεδομένα του.</p>
@@ -337,7 +341,7 @@
 
 <!-- ============================== ENGLISH ============================== -->
 <article class="card" data-l="en" lang="en">
-  <p class="meta">Effective date: 17 October 2026</p>
+  <p class="meta">Effective date: 18 October 2026</p>
 
   <nav class="toc" aria-label="Contents">
     <p>Contents</p>
@@ -391,6 +395,7 @@
       <tr><td><strong>Security and technical data:</strong> the hosting provider's technical logs (IP address, time, requested address, error messages)</td><td>Protecting accounts, stopping attacks, fixing errors</td><td>(f)</td></tr>
       <tr><td><strong>Rate-limit counters:</strong> your IP address and user ID, together with the number of actions taken (e.g. failed sign-ins, code requests, messages sent), kept in short-lived counters</td><td>Preventing abuse and brute-force attacks. Counters last from a few minutes up to 1 day at most and are deleted automatically when they expire.</td><td>(f) security</td></tr>
       <tr><td><strong>Known devices:</strong> a hash of the random device ID the app generates (not the ID itself), device model, operating system, first and last sign-in date. No IP address or location is stored.</td><td>Warning you by email when your account is signed in from a new device. Deleted when you delete your account.</td><td>(f) security</td></tr>
+      <tr><td><strong>Sessions:</strong> a record for each sign-in (sign-in and last-use date, a hash of the device ID, this phone’s push token). No IP address or location is stored.</td><td>Ending the session on the server too when you log out or change/reset your password; no notifications after logging out.</td><td>(f) security</td></tr>
       <tr><td><strong>Leaked-password check:</strong> at sign-up, password reset and password change, only the first 5 characters of the password's SHA-1 hash are sent to the Have I Been Pwned service (through Cloudflare's infrastructure). Your password, email or account details are not sent. We store nothing about it.</td><td>Preventing the use of passwords that have been leaked before</td><td>(f) security</td></tr>
       <tr><td><strong>Error reports:</strong> errors on the server are sent to Sentry. Request contents, email, name, sign-in key and cookies are not sent; email addresses in error messages are removed; the user is marked only with a random ID that is newly generated for every error and cannot be linked to your account.</td><td>Finding and fixing problems</td><td>(f)</td></tr>
       <tr><td><strong>Emails you send us</strong></td><td>Solving your problem, answering your request</td><td>(b), (c) rights requests</td></tr>
@@ -444,6 +449,7 @@
       <tr><td>Verification codes</td><td>15 minutes; deleted automatically when they expire.</td></tr>
       <tr><td>Rate-limit counters</td><td>From a few minutes up to 1 day at most; deleted automatically when they expire.</td></tr>
       <tr><td>Known devices</td><td>Until you delete your account; deleted at once with it.</td></tr>
+      <tr><td>Sessions</td><td>90 days after last use. On logout the device hash and push token are deleted at once; the remaining “ended” record is deleted within 90 days at most. Deleted at once with your account.</td></tr>
       <tr><td>Error reports (Sentry)</td><td>30 days (the period on Sentry's free plan), then deleted by Sentry.</td></tr>
       <tr><td>Database backups</td><td>Daily backups are kept in MongoDB Atlas (Frankfurt) for 8 days. Data you delete also disappears from the backups at the end of this period at the latest.</td></tr>
       <tr><td>The hosting provider's technical logs</td><td>For the provider's short log retention period.</td></tr>
@@ -467,7 +473,7 @@
   <p><strong>Right to complain:</strong> If you think your data is processed unlawfully, you can complain to the Hellenic Data Protection Authority (HDPA): Kifisias 1-3, 115 23 Athens, Greece, <a href="https://www.dpa.gr" rel="noopener noreferrer">www.dpa.gr</a>. You can also turn to the data protection authority of the country where you live or work, or where the problem happened. If you write to us first, we will try to solve the issue together.</p>
 
   <h2 id="en-8">8. Security</h2>
-  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored in a form that cannot be turned back into the password (bcrypt). Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Leaked passwords are rejected at sign-up, password reset and password change. You are warned by email when your account is signed in from a new device. Administrator access to data is limited. If there is a data breach, we notify the Hellenic Data Protection Authority (HDPA) within 72 hours where required, and you as well if there is a high risk.</p>
+  <p>All connections between the app and the server are encrypted (HTTPS). Passwords are stored in a form that cannot be turned back into the password (bcrypt). Your sign-in key is kept in your phone's secure storage. Sign-in and code attempts are limited. Leaked passwords are rejected at sign-up, password reset and password change. You are warned by email when your account is signed in from a new device. When you log out, your session also ends on the server; changing your password ends your sessions on all other devices. Administrator access to data is limited. If there is a data breach, we notify the Hellenic Data Protection Authority (HDPA) within 72 hours where required, and you as well if there is a high risk.</p>
 
   <h2 id="en-9">9. Age limit</h2>
   <p>ExoJobs is only for people aged 18 or older. When you sign up you confirm that you are 18 or older. If we learn that an account belongs to someone under 18, we delete the account and its data.</p>
